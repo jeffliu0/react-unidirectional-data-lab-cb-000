@@ -12,6 +12,7 @@ export default class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
+<<<<<<< HEAD
       files: fileStore.getState(),
       selectedFileIndex: 0
     }
@@ -26,6 +27,17 @@ export default class App extends React.Component {
      this.setState({files});
   })
 }
+=======
+      files: this.getState(),
+      selectedFileIndex: 0
+    }
+  }
+  componentDidMount() {
+    // TODO
+    this.removeListener = counterStore.addListener(counter => {
+     this.setState({counter});
+  }
+>>>>>>> 783c18b0ab0a2fdd6a7b931ca366ecad60642965
   componentWillUnmount() {
     // TODO
     this.removeListener()

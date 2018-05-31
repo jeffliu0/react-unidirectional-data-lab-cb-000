@@ -3,6 +3,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
+<<<<<<< HEAD
 // Find first non-empty line and use as title.
 const getTitle = file =>
   file.split('\n').find(line => line.length);
@@ -18,3 +19,21 @@ const SidebarItem = ({ file = '', isSelected, onClick }) => (
 );
 
 export default SidebarItem;
+=======
+export default class SidebarItem extends React.Component {
+  static getTitle (file) {
+    // Find first non-empty line and use as title.
+    return file.split('\n').find(line => line.length);
+  }
+  render() {
+    const{file, isSelected, onClick} = this.props
+    return (
+      <li className = {isSelected ? "sidebar__item--selected":"sidebar__item"} onSelect={isSelected}>
+        <a href='#' className="sidebar__link" onClick={onClick}>
+          { file === ""? 'Untitled': getTitle(file)}
+        </a>
+      </li>
+    );
+  }
+}
+>>>>>>> 783c18b0ab0a2fdd6a7b931ca366ecad60642965

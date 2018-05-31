@@ -11,7 +11,11 @@ export default class Sidebar extends React.Component {
   }
 
   handleClick(index, ev) {
+<<<<<<< HEAD
     ev.preventDefault();
+=======
+    ev.preventDefault()
+>>>>>>> 783c18b0ab0a2fdd6a7b931ca366ecad60642965
     this.props.onSelect(index)
   }
 
@@ -21,6 +25,7 @@ export default class Sidebar extends React.Component {
     return (
       <ul className="sidebar">
         {
+<<<<<<< HEAD
           files.map((item, i) => (
             <SidebarItem
               isSelected={selectedFileIndex === i}
@@ -31,6 +36,11 @@ export default class Sidebar extends React.Component {
           ))
         }
 
+=======
+          files.map((item,i) =>
+           <SidebarItem file={item} key= {i} isSelected = {selectedFileIndex===i} onClick={this.handleClick.bind(null,i)} /> )
+        }
+>>>>>>> 783c18b0ab0a2fdd6a7b931ca366ecad60642965
       </ul>
     );
   }
